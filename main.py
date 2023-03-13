@@ -2,11 +2,8 @@ import json
 import re
 
 import requests
-from selenium import webdriver
-import time
 from datetime import timedelta
 from bs4 import BeautifulSoup
-from selenium.webdriver.chrome.service import Service
 
 
 def millis_to_hhmmss(millis):
@@ -57,6 +54,3 @@ def get_mr_scraping(url: str, count: int = 5):
         return 'YT404'
     except AttributeError:  # 요청한 URL이 올바르지 않음
         return 'YT400'
-
-
-print(get_mr_scraping('https://www.youtube.com/watch?v=8KsEgtUOuvA', 10))
